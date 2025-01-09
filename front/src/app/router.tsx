@@ -1,5 +1,10 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../components/MainLayout";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import LoginPage from "../pages/Login/LoginPage";
+import ProfilePage from "../pages/Profile/ProfilePage";
+import VolunteersPage from "../pages/Volunteers/VolunteersPage";
+import HelpAnimalsPage from "../pages/Help-animals/HelpAnimalsPage";
 
 export const router = createBrowserRouter([
 	{
@@ -8,20 +13,21 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: "pets",
-				element: <div>Pets</div>
+				element: <HelpAnimalsPage/>
 			},
 			{
 				path: "volunteers",
-				element: <div>Volunteers</div>
+				element: <VolunteersPage/>
 			},
 			{
 				path: "profile",
-				element: <div>Profile</div>
+				element: <ProfilePage/>
 			},
 			{
 				path: "login",
-				element: <div>Log In</div>
+				element: <LoginPage/>
 			},
-		]
+		],
+		errorElement : ErrorPage()
 	}
 ]);
