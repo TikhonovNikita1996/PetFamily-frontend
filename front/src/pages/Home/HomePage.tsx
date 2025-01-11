@@ -1,13 +1,14 @@
-import { Grid2 } from "@mui/material";
+import { Grid2, Pagination } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Pet } from "../../app/models/Pet";
 import PetsCatalog from "../../components/PetsCatalogManagement/PetsCatalog";
 import PetsFilter from "../../components/PetsCatalogManagement/PetsFilter";
+import AppPagination from "../../components/AppPagination";
 
 export default function HomePage() {
 	const [pets, setPets] = useState<Pet[]>([]);
-
+	
 	useEffect(() => {
 		axios
 			.get<Pet[]>("https://localhost:44328/test-pets")
@@ -22,10 +23,10 @@ export default function HomePage() {
 			<Grid2 size={3}>
         <PetsFilter/>
 		</Grid2>
-		<Grid2 size={8.5}>
-			<PetsCatalog pets={pets} />
-		</Grid2>
-			
+			<Grid2 size={8.5}>
+				<PetsCatalog pets={pets} />
+				<AppPagination/>
+			</Grid2>
 		</Grid2>
 	);
 }

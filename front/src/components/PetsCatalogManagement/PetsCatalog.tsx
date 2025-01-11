@@ -1,4 +1,4 @@
-import { Grid2 } from "@mui/material";
+import { Grid2, Pagination } from "@mui/material";
 import { Pet } from "../../app/models/Pet";
 import PetCard from "./PetCard";
 

@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import { ContentBlock } from "./ContentBlock";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
+import { Grid2 } from "@mui/material";
 
 export type Props = {
 	children: React.ReactNode;
@@ -14,11 +15,9 @@ export default function MainLayout() {
 			<main className="flex flex-col h-full px-2 sm:px-2 py-2 sm:py-2">
 				<ContentBlock>
 					<Outlet />
+					<Footer/>
 				</ContentBlock>
 			</main>
-			<div className="flex flex-col h-full px-2 sm:px-2 py-2 sm:py-2"> 
-				<Footer/>
-			</div>
 		</div>
 	);
 }
