@@ -2,7 +2,6 @@ import { Outlet } from "react-router";
 import { ContentBlock } from "./ContentBlock";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
-import { Grid2 } from "@mui/material";
 
 export type Props = {
 	children: React.ReactNode;

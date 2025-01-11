@@ -6,7 +6,7 @@ export default function AppPagination() {
 			<Typography>
 				Показываются X элементов из Y
 			</Typography>
-			<Pagination color="secondary" size="large" count={10} />
+			<Pagination color="primary" size="large" count={10} />
 		</Box>
 	);
 }

@@ -1,4 +1,13 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import {
+	Button,
+	Card,
+	CardActions,
+	CardContent,
+	CardMedia,
+	IconButton,
+	Typography,
+} from "@mui/material";
 import { Pet } from "../../app/models/Pet";
 
 type Props = {
@@ -20,20 +29,25 @@ export default function PetCard({ pet }: Props) {
 			<CardMedia
 				sx={{ height: 240, backgroundSize: "cover" }}
 				image="https://i.ytimg.com/vi/-djeeBlIYFI/maxresdefault.jpg" // временно побудет так. Потом переделаю.
-				title={pet.name}
 			/>
 			<CardContent>
 				<Typography
 					gutterBottom
-					sx={{ textTransform: "uppercase" }}
-					variant="subtitle2"
+					variant="h6"
+					color=""
 				>
-					{pet.name}
+					{pet.name}, {pet.age} лет
 				</Typography>
-				<Typography variant="h6" sx={{ color: "secondary.main" }}>
+				<Typography variant="h6">
 					TEST!!!!
 				</Typography>
 			</CardContent>
+			<CardActions sx={{ justifyContent: "space-between" }}>
+				<Button variant="contained">Подробнее</Button>
+				<IconButton color="inherit">
+					<StarBorderIcon />
+				</IconButton>
+			</CardActions>
 		</Card>
 	);
 }
