@@ -16,7 +16,9 @@ export default function MainLayout() {
 					<Outlet />
 				</ContentBlock>
 			</main>
-			<Footer />
+			<div className="flex flex-col h-full px-2 sm:px-2 py-2 sm:py-2"> 
+				<Footer/>
+			</div>
 		</div>
 	);
 }

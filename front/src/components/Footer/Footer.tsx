@@ -12,7 +12,7 @@ export default function Footer() {
 				padding: "16px",
 				display: "flex",
 				alignItems: "center",
-				justifyContent: "space-between",
+				justifyContent: "space-between"
 			}}
 		>
 			<div>
