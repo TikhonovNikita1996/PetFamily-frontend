@@ -5,12 +5,16 @@ import LoginPage from "../pages/Login/LoginPage";
 import ProfilePage from "../pages/Profile/ProfilePage";
 import VolunteersPage from "../pages/Volunteers/VolunteersPage";
 import HelpAnimalsPage from "../pages/Help-animals/HelpAnimalsPage";
+import HomePage from "../pages/Home/HomePage";
 
 export const router = createBrowserRouter([
 	{
-		path: "/",
 		element: <MainLayout/>,
 		children: [
+			{
+				path: "/",
+				element: <HomePage/>
+			},
 			{
 				path: "pets",
 				element: <HelpAnimalsPage/>
