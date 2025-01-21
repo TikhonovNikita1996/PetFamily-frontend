@@ -1,10 +1,8 @@
-import { Button, Skeleton, TextField } from "@mui/material";
+import { Button, Skeleton, TextField, Typography } from "@mui/material";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router";
 import { useAuth } from "../../contexts/auth/useAuth";
-import { AccountService } from "../../api/accounts";
-import { useState } from "react";
-import { api } from "../../api/api";
 
 type LoginFields = {
 	email: string;
@@ -24,7 +22,8 @@ export default function LoginPage() {
 	};
 
 	const [isLoading, setLoading] = useState(false);
-
+	const preventDefault = (event: React.SyntheticEvent) =>
+		event.preventDefault();
 	return (
 		<>
 			{isLoading ? (
@@ -34,14 +33,18 @@ export default function LoginPage() {
 					<NavLink to="/" className="text-lg">
 						← Обратно на главную
 					</NavLink>
-
-					<div>Access Token {accessToken}</div>
-
-					<div className="flex flex-col flex-1 min-w-80 mx-auto justify-center items-center gap-9">
+					<div className="flex flex-col flex-1 min-w-80 mx-auto justify-center items-center gap-8">
 						<form
 							onSubmit={handleSubmit(onSubmit)}
-							className="flex flex-col w-full items-center gap-7"
+							className="flex flex-col w-full items-center gap-5"
 						>
+							<Typography
+								fontWeight="fontWeightBold"
+								variant="h4"
+								textAlign="center"
+							>
+								Вход
+							</Typography>
 							<TextField
 								variant="standard"
 								label="Email"
@@ -68,8 +71,15 @@ export default function LoginPage() {
 									required: "Это поле обязательно для заполнения",
 								})}
 							/>
-							<Button type="submit">Войти</Button>
+							<Button type="submit" variant="contained" size="large">
+								Войти
+							</Button>
 						</form>
+						<div>
+							<NavLink to="/register" className="text-sm text-white-500">
+								Нет аккаунта? Зарегистрируйтесь
+							</NavLink>
+						</div>
 					</div>
 				</div>
 			)}
