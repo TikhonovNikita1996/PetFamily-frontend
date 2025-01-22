@@ -1,37 +1,42 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../components/MainLayout";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import LoginPage from "../pages/Login/LoginPage";
-import ProfilePage from "../pages/Profile/ProfilePage";
-import VolunteersPage from "../pages/Volunteers/VolunteersPage";
 import HelpAnimalsPage from "../pages/Help-animals/HelpAnimalsPage";
 import HomePage from "../pages/Home/HomePage";
+import LoginPage from "../pages/Login/LoginPage";
+import ProfilePage from "../pages/Profile/ProfilePage";
+import RegistrationPage from "../pages/Registration/RegistrationPage";
+import VolunteersPage from "../pages/Volunteers/VolunteersPage";
 
 export const router = createBrowserRouter([
 	{
-		element: <MainLayout/>,
+		element: <MainLayout />,
 		children: [
 			{
 				path: "/",
-				element: <HomePage/>
+				element: <HomePage />,
 			},
 			{
 				path: "pets",
-				element: <HelpAnimalsPage/>
+				element: <HelpAnimalsPage />,
 			},
 			{
 				path: "volunteers",
-				element: <VolunteersPage/>
+				element: <VolunteersPage />,
 			},
 			{
 				path: "profile",
-				element: <ProfilePage/>
+				element: <ProfilePage />,
 			},
 			{
 				path: "login",
-				element: <LoginPage/>
+				element: <LoginPage />,
+			},
+			{
+				path: "register",
+				element: <RegistrationPage />,
 			},
 		],
-		errorElement : ErrorPage()
-	}
+		errorElement: ErrorPage(),
+	},
 ]);
